@@ -11,27 +11,6 @@ import Cta from '../patterns/Cta';
 import Heading from '../patterns/Heading';
 import store from '../store';
 
-const NAV = {
-  list: [
-    {
-      label: 'Speakers',
-      link: '/speakers',
-    },
-    {
-      label: 'Partners',
-      link: '/sponsors',
-    },
-    {
-      label: 'Blog',
-      link: '/blog',
-    },
-    {
-      label: 'Venue',
-      link: '/blog/introducing-generator',
-    }
-  ],
-};
-
 const CFP = {
   title: 'Call for Papers',
   description: '<p>Are you interested in speaking besides Arron and Eileen? Our CFP is open until 14th of February!</p>',
