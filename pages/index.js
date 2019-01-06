@@ -1,4 +1,4 @@
-import Layout from '../layouts/Landing';
+import Layout from '../layouts/Darkside';
 import Container from '../documentation/Container';
 import ArticleList from '../patterns/ArticleList';
 import LeadImageDark from '../patterns/LeadImageDark';
@@ -6,19 +6,13 @@ import Text from '../patterns/Text';
 import SectionTitle from '../patterns/SectionTitle';
 import Speakers from '../patterns/Speakers';
 import Navigation from '../patterns/Navigation';
-import Newsletter from '../patterns/Newsletter';
 import PartnerLogos from '../patterns/PartnerLogos';
+import Cta from '../patterns/Cta';
 import Heading from '../patterns/Heading';
-import Schedule from '../patterns/Schedule';
 import store from '../store';
-import schedule from '../schedule';
 
 const NAV = {
   list: [
-    {
-      label: 'Schedule',
-      link: '/schedule',
-    },
     {
       label: 'Speakers',
       link: '/speakers',
@@ -38,14 +32,32 @@ const NAV = {
   ],
 };
 
+const CFP = {
+  title: 'Call for Papers',
+  description: '<p>Are you interested in speaking besides Arron and Eileen? Our CFP is open until 14th of February!</p>',
+  primaryLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeJszd7yDYk_DQdVN4XqvQ5zVVrKzgJAAENN0m7Hz-6UxzHpQ/viewform',
+  primaryLabel: 'Apply for CFP',
+  secondaryLink: '#',
+  secondaryLabel: '',
+};
+
+const Videos = {
+  title: 'Videos',
+  description: '<p>Did you miss 2018? Here is a playlist with all the videos from our 2018 edition!</p>',
+  primaryLink: 'https://www.youtube.com/playlist?list=PLAkGYJoUfB0v4ssiPcL_OIM1-t_LssfAY',
+  primaryLabel: '2018 Videos',
+  secondaryLink: '#',
+  secondaryLabel: '',
+};
+
 export default () => (
   <Layout>
     <Container theme="blank" spacing="none">
       <div className="lead-header">
         <div className="hero">
           <img src="/static/assets/balkanruby-header-logo.svg" alt="Balkan Ruby" className="logo" />
-          <p>25 – 26 May 2018; Sofia, Bulgaria</p>
-          <button disabled className="btn-primary lg">SOLD OUT</button>
+          <p>17–18 May 2019; Sofia, Bulgaria</p>
+          <a href="/tickets" className="btn-primary lg">Tickets</a>
         </div>
 
         <div className="video-container">
@@ -57,117 +69,18 @@ export default () => (
       </div>
     </Container>
 
-    <Container theme="light-bg" spacing="none">
-      <Navigation {...NAV} />
-    </Container>
+    <Heading theme="yellow-bg" name="Speakers" />
 
-    <Heading name="Schedule" />
-
-    <Container theme="blank" spacing="spacing-both">
-      <Schedule list={schedule} />
-    </Container>
-
-    <Heading name="Speakers" />
-
-    <br/>
-
-    <Container theme="blank" spacing="spacing-bottom">
+    <Container theme="yellow-bg" spacing="spacing-bottom">
       <Speakers list={store.speakers} />
     </Container>
 
-    <Container theme="light-bg" spacing="spacing-bottom">
-      <Heading name="Blog" />
-
-      <div className="container">
-        <div className="grid">
-          <div className="article-list">
-            <div className="article">
-              <h3>
-                <a href="/blog/community-tickets">Community Tickets</a>
-              </h3>
-              <div className="meta">
-                by{' '}
-                <a href="https://twitter.com/gsamokovarov" target="_blank">
-                  Genadi
-                </a>
-              </div>
-              <p>
-                We may be sold out, but we have saved a few tickets to give away for free!
-              </p>
-            </div>
-
-            <div className="article">
-              <h3>
-                <a href="/blog/introducing-generator">The Venue</a>
-              </h3>
-              <div className="meta">
-                by{' '}
-                <a href="https://twitter.com/vestimir" target="_blank">
-                  Vestimir
-                </a>
-              </div>
-              <p>
-                Today we are excited to reveal the venue for Balkan Ruby! The
-                conference will be held on 25th and 26th of May at Generator
-                Sofia.
-              </p>
-            </div>
-
-            <div className="article">
-              <h3>
-                <a href="/blog/cfp-time">CFP Time</a>
-              </h3>
-              <div className="meta">
-                by{' '}
-                <a href="https://twitter.com/gsamokovarov" target="_blank">
-                  Genadi
-                </a>
-              </div>
-              <p>
-                The Balkans are such a nice place to be and we can help you get
-                here for free through our <a href="https://goo.gl/forms/uvxE2CR7I3fwYCtl2" targe="_blank">Call for Papers</a>!
-              </p>
-            </div>
-
-            <div className="article">
-              <h3>
-                <a href="/blog/announcement">Introducing Balkan Ruby</a>
-              </h3>
-              <div className="meta">
-                by{' '}
-                <a href="https://twitter.com/gsamokovarov" target="_blank">
-                  Genadi
-                </a>
-              </div>
-              <p>
-                Meet Balkan Ruby, an event not just for Bulgaria, but the whole
-                Balkan region. With it, we aim to introduce the local
-                communities to each other and invite developers from all over
-                Europe to come, share and exchange ideas with us. The dates are
-                25th and 26th of May 2018, the city – Sofia, Bulgaria.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <Container theme="yellow-bg" spacing="spacing-bottom">
+      <Cta {...CFP} />
     </Container>
 
-    <Heading name="Partners" />
-
-    <Container theme="blank" spacing="spacing-both">
-      <PartnerLogos list={store.sponsors.pro} />
-    </Container>
-
-    <Container theme="blank" spacing="spacing-both">
-      <PartnerLogos list={store.sponsors.standard} />
-    </Container>
-
-    <Container theme="blank" spacing="spacing-top">
-      <Text centered text="<h3>Thanks to</h3>" />
-    </Container>
-
-    <Container theme="blank" spacing="spacing-both">
-      <PartnerLogos list={store.sponsors.speaker} />
+    <Container theme="blue-bg" spacing="spacing-bottom">
+      <Cta {...Videos} />
     </Container>
   </Layout>
 );

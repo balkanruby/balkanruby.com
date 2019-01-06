@@ -1,6 +1,6 @@
 import Helmet from 'react-helmet';
 
-import Layout from '../layouts/Default';
+import Layout from '../layouts/Darkside';
 import Container from '../documentation/Container';
 import PageTitle from '../patterns/PageTitle';
 import ThumbFeed from '../patterns/ThumbFeed';

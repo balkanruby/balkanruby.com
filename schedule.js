@@ -32,13 +32,3 @@ const findSpeakerName = (event, speakers) => {
 
 const findSpeaker = (event, speakers) =>
   speakers.find(speaker => speaker.anchor === event.author);
-
-export default store.schedule.map(event =>
-  ({
-    type: event.type,
-    time: event.time,
-    description: buildDescription(event, store.speakers),
-    speaker_name: findSpeakerName(event, store.speakers),
-    speaker_anchor: findSpeakerAnchor(event, store.speakers)
-  })
-);

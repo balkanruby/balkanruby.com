@@ -18,7 +18,7 @@ const Speakers = ({ list }) => (
     <div className="container">
       <div className="grid">
         {list.map((speaker, idx) =>
-          <div className="fourth">
+          <div className="half">
             <Speaker
               key={idx}
               image={speaker.image}

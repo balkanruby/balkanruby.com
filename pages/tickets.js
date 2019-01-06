@@ -1,7 +1,8 @@
 import Helmet from 'react-helmet';
-import Layout from '../layouts/Default';
+import Layout from '../layouts/Darkside';
 import Container from '../documentation/Container';
 import SectionTitle from '../patterns/SectionTitle';
+import PageTitle from '../patterns/PageTitle';
 import Faq from '../patterns/Faq';
 import Cta from '../patterns/Cta';
 
@@ -9,7 +10,6 @@ const EMAIL = 'hi@balkanruby.com'
 
 const FAQ = [
   {
-
     question: 'How do I get an invoice for my ticket?',
     answer: '<p>We will send you an Invoice within a few days from the date when you purchased your ticket.</p><p>If you have any questions or special requests for the invoice do not hesitate to contact us: <a href="mailto:hi@balkanruby.com?subject=Invoice question">hi@balkanruby.com</a></p>'
   },
@@ -63,7 +63,16 @@ const FAQ = [
   }
 ];
 
-const CTA = {
+const Buy = {
+  title: '',
+  description: '<p>Get yourself a ticket with a PayPal account.</p>',
+  primaryLink: 'https://event.gg/11378/',
+  primaryLabel: 'Buy Tickets',
+  secondaryLink: '#',
+  secondaryLabel: '',
+};
+
+const Questions = {
   title: 'Need more information?',
   description: '<br />',
   primaryLink: false,
@@ -78,25 +87,22 @@ export default () => (
       <title>Tickets | Balkan Ruby</title>
     </Helmet>
 
-    <Container theme="blank" spacing="spacing-both">
-      <div className="container">
-        <h1>Tickets</h1>
+    <PageTitle theme="dark-bg" title="Tickets" />
 
-        <script src="https://cdn.weemss.com/compiled/js/integration-embed.js?v79.7"></script>
-        <iframe src="https://event.gg/9100/form" id="weemss_integration_9100" frameBorder="0" width="100%" height="100%" scrolling="no"></iframe>
-      </div>
+    <Container theme="dark-bg" spacing="spacing-both">
+      <Cta {...Buy} />
     </Container>
 
-    <Container theme="blank" spacing="spacing-both">
+    <Container theme="light-bg" spacing="spacing-both">
       <SectionTitle title="FAQ" />
     </Container>
 
-    <Container theme="blank" spacing="spacing-both">
+    <Container theme="light-bg" spacing="spacing-both">
       <Faq list={FAQ} />
     </Container>
 
     <Container theme="light-bg" spacing="spacing-both">
-      <Cta {...CTA} />
+      <Cta {...Questions} />
     </Container>
   </Layout>
 );
