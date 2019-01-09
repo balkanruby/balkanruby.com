@@ -13,7 +13,7 @@ import store from '../store';
 
 const CFP = {
   title: 'Call for Papers',
-  description: '<p>Are you interested in speaking besides Arron and Eileen? Our CFP is open until 14th of February!</p>',
+  description: '<p>Are you interested in speaking besides Arron and Eileen? Our CFP is open until 28th of February!</p>',
   primaryLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeJszd7yDYk_DQdVN4XqvQ5zVVrKzgJAAENN0m7Hz-6UxzHpQ/viewform',
   primaryLabel: 'Apply for CFP',
   secondaryLink: '#',
